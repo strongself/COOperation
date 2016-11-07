@@ -1,0 +1,975 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8113FA951CD0BB220078B60F /* ControlFlowOperationChainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8113FA941CD0BB220078B60F /* ControlFlowOperationChainer.m */; };
+		8113FA991CD0BB7C0078B60F /* DataFlowOperationChainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8113FA981CD0BB7C0078B60F /* DataFlowOperationChainer.m */; };
+		8113FA9C1CD0CC5B0078B60F /* DoublingOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8113FA9B1CD0CC5B0078B60F /* DoublingOperation.m */; };
+		8113FA9F1CD10E300078B60F /* LogInputOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8113FA9E1CD10E300078B60F /* LogInputOperation.m */; };
+		8113FAA51CD233AA0078B60F /* VectorSpecificOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8113FAA41CD233AA0078B60F /* VectorSpecificOperation.m */; };
+		8113FAA81CD240BB0078B60F /* LogStringOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8113FAA71CD240BB0078B60F /* LogStringOperation.m */; };
+		8113FAB11CD2569D0078B60F /* NSOperationQueue+CustomQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 8113FAB01CD2569D0078B60F /* NSOperationQueue+CustomQueue.m */; };
+		811D4BFD1CE22E7A009E0B43 /* OperationChainConfiguratorImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 811D4BFC1CE22E7A009E0B43 /* OperationChainConfiguratorImplementation.m */; };
+		811D4BFE1CE22E7A009E0B43 /* OperationChainConfiguratorImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 811D4BFC1CE22E7A009E0B43 /* OperationChainConfiguratorImplementation.m */; };
+		811D4C011CE31C6C009E0B43 /* ControlFlowOperationChainerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 811D4C001CE31C6C009E0B43 /* ControlFlowOperationChainerTests.m */; };
+		811D4C021CE31E4C009E0B43 /* ControlFlowOperationChainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8113FA941CD0BB220078B60F /* ControlFlowOperationChainer.m */; };
+		811D4C031CE31E55009E0B43 /* OperationBufferFactoryImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 81705BF11CC65D12005DAC85 /* OperationBufferFactoryImplementation.m */; };
+		811D4C041CE31E60009E0B43 /* OperationChainerFactoryImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8184BA141CCF5CFB007A3ACF /* OperationChainerFactoryImplementation.m */; };
+		811D4C051CE31E71009E0B43 /* DataFlowOperationChainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8113FA981CD0BB7C0078B60F /* DataFlowOperationChainer.m */; };
+		811D4C061CE31E78009E0B43 /* OperationBufferImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 81705BF41CC65D12005DAC85 /* OperationBufferImplementation.m */; };
+		811D4C081CE31EF4009E0B43 /* DataFlowOperationChainerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 811D4C071CE31EF4009E0B43 /* DataFlowOperationChainerTests.m */; };
+		81207B401CE3281900C47B58 /* OperationBufferImplementationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 81207B3F1CE3281900C47B58 /* OperationBufferImplementationTests.m */; };
+		81207B421CE32DBF00C47B58 /* OperationChainConfiguratorImplementationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 81207B411CE32DBF00C47B58 /* OperationChainConfiguratorImplementationTests.m */; };
+		81207B441CE352A800C47B58 /* CompoundOperationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 81207B431CE352A800C47B58 /* CompoundOperationTests.m */; };
+		81207B451CE3588200C47B58 /* CompoundOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 81705BEB1CC65D12005DAC85 /* CompoundOperation.m */; };
+		81207B491CE3821900C47B58 /* SuccessChainableOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 81207B481CE3821900C47B58 /* SuccessChainableOperation.m */; };
+		81207B4C1CE3829300C47B58 /* SleepFailureChainableOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 81207B4B1CE3829300C47B58 /* SleepFailureChainableOperation.m */; };
+		81207B4F1CE4BBFA00C47B58 /* VectorSpecificOperationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 81207B4E1CE4BBFA00C47B58 /* VectorSpecificOperationTests.m */; };
+		81207B501CE4C66900C47B58 /* VectorSpecificOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8113FAA41CD233AA0078B60F /* VectorSpecificOperation.m */; };
+		8121FEB51CE1C5240023B632 /* NSOperationQueue+CustomQueueTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8121FEB41CE1C5240023B632 /* NSOperationQueue+CustomQueueTests.m */; };
+		8121FEB81CE1CD210023B632 /* ChainableOperationBaseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8121FEB71CE1CD210023B632 /* ChainableOperationBaseTests.m */; };
+		8121FEB91CE1DDA60023B632 /* AsyncOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 81705BE51CC65D12005DAC85 /* AsyncOperation.m */; };
+		8121FEBA1CE1DDAF0023B632 /* ChainableOperationBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 81705BE81CC65D12005DAC85 /* ChainableOperationBase.m */; };
+		8121FEBB1CE1DDD80023B632 /* NSOperationQueue+CustomQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 8113FAB01CD2569D0078B60F /* NSOperationQueue+CustomQueue.m */; };
+		81705BFE1CC65D12005DAC85 /* AsyncOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 81705BE51CC65D12005DAC85 /* AsyncOperation.m */; };
+		81705BFF1CC65D12005DAC85 /* ChainableOperationBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 81705BE81CC65D12005DAC85 /* ChainableOperationBase.m */; };
+		81705C001CC65D12005DAC85 /* CompoundOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 81705BEB1CC65D12005DAC85 /* CompoundOperation.m */; };
+		81705C011CC65D12005DAC85 /* OperationBufferFactoryImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 81705BF11CC65D12005DAC85 /* OperationBufferFactoryImplementation.m */; };
+		81705C021CC65D12005DAC85 /* OperationBufferImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 81705BF41CC65D12005DAC85 /* OperationBufferImplementation.m */; };
+		81705C161CC65D1C005DAC85 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 81705C061CC65D1C005DAC85 /* AppDelegate.m */; };
+		81705C171CC65D1C005DAC85 /* DecrementOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 81705C0B1CC65D1C005DAC85 /* DecrementOperation.m */; };
+		81705C181CC65D1C005DAC85 /* IncrementOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 81705C0D1CC65D1C005DAC85 /* IncrementOperation.m */; };
+		81705C191CC65D1C005DAC85 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81705C101CC65D1C005DAC85 /* FirstViewController.m */; };
+		81705C1A1CC65D1C005DAC85 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81705C121CC65D1C005DAC85 /* SecondViewController.m */; };
+		81705C1B1CC65D1C005DAC85 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 81705C141CC65D1C005DAC85 /* Info.plist */; };
+		81705C1C1CC65D1C005DAC85 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 81705C151CC65D1C005DAC85 /* main.m */; };
+		8184BA151CCF5CFB007A3ACF /* OperationChainerFactoryImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8184BA141CCF5CFB007A3ACF /* OperationChainerFactoryImplementation.m */; };
+		81970DC81CEA08F700E25D51 /* FailureChainableOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 81970DC71CEA08F700E25D51 /* FailureChainableOperation.m */; };
+		81D3C8871CE9E2870090178B /* OperationBufferFactoryImplementationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 81D3C8861CE9E2870090178B /* OperationBufferFactoryImplementationTests.m */; };
+		81E809961CBC0291002C9958 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81E809941CBC0291002C9958 /* Main.storyboard */; };
+		81E809981CBC0291002C9958 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81E809971CBC0291002C9958 /* Assets.xcassets */; };
+		81E8099B1CBC0292002C9958 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81E809991CBC0292002C9958 /* LaunchScreen.storyboard */; };
+		C29CDB5B695701B61E76C061 /* libPods-CompoundOperationsExampleDevTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BC98D04E4539693A18A4738E /* libPods-CompoundOperationsExampleDevTests.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		81E809A21CBC0292002C9958 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 81E8097D1CBC0291002C9958 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 81E809841CBC0291002C9958;
+			remoteInfo = CompoundOperationsExampleDev;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		096870B99FE7CABEE65B5EAD /* Pods-CompoundOperationsExampleDevTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CompoundOperationsExampleDevTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CompoundOperationsExampleDevTests/Pods-CompoundOperationsExampleDevTests.debug.xcconfig"; sourceTree = "<group>"; };
+		14AEF4DD23D1C29CF513F43B /* Pods-CompoundOperationsExampleDevTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CompoundOperationsExampleDevTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CompoundOperationsExampleDevTests/Pods-CompoundOperationsExampleDevTests.release.xcconfig"; sourceTree = "<group>"; };
+		8113FA931CD0BB220078B60F /* ControlFlowOperationChainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ControlFlowOperationChainer.h; sourceTree = "<group>"; };
+		8113FA941CD0BB220078B60F /* ControlFlowOperationChainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ControlFlowOperationChainer.m; sourceTree = "<group>"; };
+		8113FA971CD0BB7C0078B60F /* DataFlowOperationChainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataFlowOperationChainer.h; sourceTree = "<group>"; };
+		8113FA981CD0BB7C0078B60F /* DataFlowOperationChainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataFlowOperationChainer.m; sourceTree = "<group>"; };
+		8113FA9A1CD0CC5B0078B60F /* DoublingOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoublingOperation.h; sourceTree = "<group>"; };
+		8113FA9B1CD0CC5B0078B60F /* DoublingOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoublingOperation.m; sourceTree = "<group>"; };
+		8113FA9D1CD10E300078B60F /* LogInputOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogInputOperation.h; sourceTree = "<group>"; };
+		8113FA9E1CD10E300078B60F /* LogInputOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogInputOperation.m; sourceTree = "<group>"; };
+		8113FAA31CD233AA0078B60F /* VectorSpecificOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VectorSpecificOperation.h; sourceTree = "<group>"; };
+		8113FAA41CD233AA0078B60F /* VectorSpecificOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VectorSpecificOperation.m; sourceTree = "<group>"; };
+		8113FAA61CD240BB0078B60F /* LogStringOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogStringOperation.h; sourceTree = "<group>"; };
+		8113FAA71CD240BB0078B60F /* LogStringOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogStringOperation.m; sourceTree = "<group>"; };
+		8113FAAF1CD2569D0078B60F /* NSOperationQueue+CustomQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSOperationQueue+CustomQueue.h"; sourceTree = "<group>"; };
+		8113FAB01CD2569D0078B60F /* NSOperationQueue+CustomQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSOperationQueue+CustomQueue.m"; sourceTree = "<group>"; };
+		811D4BFA1CE22658009E0B43 /* OperationChainConfigurator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OperationChainConfigurator.h; sourceTree = "<group>"; };
+		811D4BFB1CE22E7A009E0B43 /* OperationChainConfiguratorImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OperationChainConfiguratorImplementation.h; sourceTree = "<group>"; };
+		811D4BFC1CE22E7A009E0B43 /* OperationChainConfiguratorImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OperationChainConfiguratorImplementation.m; sourceTree = "<group>"; };
+		811D4C001CE31C6C009E0B43 /* ControlFlowOperationChainerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ControlFlowOperationChainerTests.m; sourceTree = "<group>"; };
+		811D4C071CE31EF4009E0B43 /* DataFlowOperationChainerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataFlowOperationChainerTests.m; sourceTree = "<group>"; };
+		81207B3F1CE3281900C47B58 /* OperationBufferImplementationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OperationBufferImplementationTests.m; sourceTree = "<group>"; };
+		81207B411CE32DBF00C47B58 /* OperationChainConfiguratorImplementationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OperationChainConfiguratorImplementationTests.m; sourceTree = "<group>"; };
+		81207B431CE352A800C47B58 /* CompoundOperationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompoundOperationTests.m; sourceTree = "<group>"; };
+		81207B471CE3821900C47B58 /* SuccessChainableOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuccessChainableOperation.h; sourceTree = "<group>"; };
+		81207B481CE3821900C47B58 /* SuccessChainableOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuccessChainableOperation.m; sourceTree = "<group>"; };
+		81207B4A1CE3829300C47B58 /* SleepFailureChainableOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SleepFailureChainableOperation.h; sourceTree = "<group>"; };
+		81207B4B1CE3829300C47B58 /* SleepFailureChainableOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SleepFailureChainableOperation.m; sourceTree = "<group>"; };
+		81207B4E1CE4BBFA00C47B58 /* VectorSpecificOperationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VectorSpecificOperationTests.m; sourceTree = "<group>"; };
+		8121FEB41CE1C5240023B632 /* NSOperationQueue+CustomQueueTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSOperationQueue+CustomQueueTests.m"; sourceTree = "<group>"; };
+		8121FEB71CE1CD210023B632 /* ChainableOperationBaseTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChainableOperationBaseTests.m; sourceTree = "<group>"; };
+		81705BE41CC65D12005DAC85 /* AsyncOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncOperation.h; sourceTree = "<group>"; };
+		81705BE51CC65D12005DAC85 /* AsyncOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncOperation.m; sourceTree = "<group>"; };
+		81705BE71CC65D12005DAC85 /* ChainableOperationBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChainableOperationBase.h; sourceTree = "<group>"; };
+		81705BE81CC65D12005DAC85 /* ChainableOperationBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChainableOperationBase.m; sourceTree = "<group>"; };
+		81705BEA1CC65D12005DAC85 /* CompoundOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompoundOperation.h; sourceTree = "<group>"; };
+		81705BEB1CC65D12005DAC85 /* CompoundOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompoundOperation.m; sourceTree = "<group>"; };
+		81705BEF1CC65D12005DAC85 /* OperationBufferFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OperationBufferFactory.h; sourceTree = "<group>"; };
+		81705BF01CC65D12005DAC85 /* OperationBufferFactoryImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OperationBufferFactoryImplementation.h; sourceTree = "<group>"; };
+		81705BF11CC65D12005DAC85 /* OperationBufferFactoryImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OperationBufferFactoryImplementation.m; sourceTree = "<group>"; };
+		81705BF21CC65D12005DAC85 /* OperationBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OperationBuffer.h; sourceTree = "<group>"; };
+		81705BF31CC65D12005DAC85 /* OperationBufferImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OperationBufferImplementation.h; sourceTree = "<group>"; };
+		81705BF41CC65D12005DAC85 /* OperationBufferImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OperationBufferImplementation.m; sourceTree = "<group>"; };
+		81705BF71CC65D12005DAC85 /* ChainableOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChainableOperation.h; sourceTree = "<group>"; };
+		81705BF81CC65D12005DAC85 /* ChainableOperationDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChainableOperationDelegate.h; sourceTree = "<group>"; };
+		81705BF91CC65D12005DAC85 /* ChainableOperationInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChainableOperationInput.h; sourceTree = "<group>"; };
+		81705BFA1CC65D12005DAC85 /* ChainableOperationOutput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChainableOperationOutput.h; sourceTree = "<group>"; };
+		81705BFC1CC65D12005DAC85 /* CompoundOperationQueueInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompoundOperationQueueInput.h; sourceTree = "<group>"; };
+		81705BFD1CC65D12005DAC85 /* CompoundOperationQueueOutput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompoundOperationQueueOutput.h; sourceTree = "<group>"; };
+		81705C051CC65D1C005DAC85 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		81705C061CC65D1C005DAC85 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		81705C0A1CC65D1C005DAC85 /* DecrementOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DecrementOperation.h; sourceTree = "<group>"; };
+		81705C0B1CC65D1C005DAC85 /* DecrementOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DecrementOperation.m; sourceTree = "<group>"; };
+		81705C0C1CC65D1C005DAC85 /* IncrementOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IncrementOperation.h; sourceTree = "<group>"; };
+		81705C0D1CC65D1C005DAC85 /* IncrementOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IncrementOperation.m; sourceTree = "<group>"; };
+		81705C0F1CC65D1C005DAC85 /* FirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
+		81705C101CC65D1C005DAC85 /* FirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		81705C111CC65D1C005DAC85 /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		81705C121CC65D1C005DAC85 /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		81705C141CC65D1C005DAC85 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		81705C151CC65D1C005DAC85 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		8184BA101CCE42FB007A3ACF /* OperationChainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OperationChainer.h; sourceTree = "<group>"; };
+		8184BA121CCF5C38007A3ACF /* OperationChainerFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OperationChainerFactory.h; sourceTree = "<group>"; };
+		8184BA131CCF5CFB007A3ACF /* OperationChainerFactoryImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OperationChainerFactoryImplementation.h; sourceTree = "<group>"; };
+		8184BA141CCF5CFB007A3ACF /* OperationChainerFactoryImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OperationChainerFactoryImplementation.m; sourceTree = "<group>"; };
+		81970DC61CEA08F700E25D51 /* FailureChainableOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FailureChainableOperation.h; sourceTree = "<group>"; };
+		81970DC71CEA08F700E25D51 /* FailureChainableOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FailureChainableOperation.m; sourceTree = "<group>"; };
+		81D3C8861CE9E2870090178B /* OperationBufferFactoryImplementationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OperationBufferFactoryImplementationTests.m; sourceTree = "<group>"; };
+		81E809851CBC0291002C9958 /* CompoundOperationsExampleDev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CompoundOperationsExampleDev.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		81E809951CBC0291002C9958 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		81E809971CBC0291002C9958 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		81E8099A1CBC0292002C9958 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		81E809A11CBC0292002C9958 /* CompoundOperationsExampleDevTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CompoundOperationsExampleDevTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		81E809A71CBC0292002C9958 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BC98D04E4539693A18A4738E /* libPods-CompoundOperationsExampleDevTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CompoundOperationsExampleDevTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		81E809821CBC0291002C9958 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		81E8099E1CBC0292002C9958 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C29CDB5B695701B61E76C061 /* libPods-CompoundOperationsExampleDevTests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6E656DFE7A3EED23FAD40CA6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BC98D04E4539693A18A4738E /* libPods-CompoundOperationsExampleDevTests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8113FA921CD0BAF50078B60F /* ControlFlow */ = {
+			isa = PBXGroup;
+			children = (
+				8113FA931CD0BB220078B60F /* ControlFlowOperationChainer.h */,
+				8113FA941CD0BB220078B60F /* ControlFlowOperationChainer.m */,
+			);
+			path = ControlFlow;
+			sourceTree = "<group>";
+		};
+		8113FA961CD0BB2E0078B60F /* DataFlow */ = {
+			isa = PBXGroup;
+			children = (
+				8113FA971CD0BB7C0078B60F /* DataFlowOperationChainer.h */,
+				8113FA981CD0BB7C0078B60F /* DataFlowOperationChainer.m */,
+			);
+			path = DataFlow;
+			sourceTree = "<group>";
+		};
+		8113FAA01CD232BC0078B60F /* Operations */ = {
+			isa = PBXGroup;
+			children = (
+				8113FAA11CD232EF0078B60F /* Specific */,
+			);
+			path = Operations;
+			sourceTree = "<group>";
+		};
+		8113FAA11CD232EF0078B60F /* Specific */ = {
+			isa = PBXGroup;
+			children = (
+				8113FAA21CD233640078B60F /* VectorSpecific */,
+			);
+			path = Specific;
+			sourceTree = "<group>";
+		};
+		8113FAA21CD233640078B60F /* VectorSpecific */ = {
+			isa = PBXGroup;
+			children = (
+				8113FAA31CD233AA0078B60F /* VectorSpecificOperation.h */,
+				8113FAA41CD233AA0078B60F /* VectorSpecificOperation.m */,
+			);
+			path = VectorSpecific;
+			sourceTree = "<group>";
+		};
+		8113FAA91CD255CB0078B60F /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				8113FAAA1CD255E10078B60F /* Categories */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		8113FAAA1CD255E10078B60F /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				8113FAAE1CD256420078B60F /* NSOperationQueue+CustomQueue */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		8113FAAE1CD256420078B60F /* NSOperationQueue+CustomQueue */ = {
+			isa = PBXGroup;
+			children = (
+				8113FAAF1CD2569D0078B60F /* NSOperationQueue+CustomQueue.h */,
+				8113FAB01CD2569D0078B60F /* NSOperationQueue+CustomQueue.m */,
+			);
+			path = "NSOperationQueue+CustomQueue";
+			sourceTree = "<group>";
+		};
+		811D4BF91CE2258F009E0B43 /* Configurator */ = {
+			isa = PBXGroup;
+			children = (
+				811D4BFA1CE22658009E0B43 /* OperationChainConfigurator.h */,
+				811D4BFB1CE22E7A009E0B43 /* OperationChainConfiguratorImplementation.h */,
+				811D4BFC1CE22E7A009E0B43 /* OperationChainConfiguratorImplementation.m */,
+			);
+			path = Configurator;
+			sourceTree = "<group>";
+		};
+		811D4BFF1CE31C1A009E0B43 /* Internal */ = {
+			isa = PBXGroup;
+			children = (
+				811D4C001CE31C6C009E0B43 /* ControlFlowOperationChainerTests.m */,
+				811D4C071CE31EF4009E0B43 /* DataFlowOperationChainerTests.m */,
+				81207B3F1CE3281900C47B58 /* OperationBufferImplementationTests.m */,
+				81207B411CE32DBF00C47B58 /* OperationChainConfiguratorImplementationTests.m */,
+				81D3C8861CE9E2870090178B /* OperationBufferFactoryImplementationTests.m */,
+			);
+			path = Internal;
+			sourceTree = "<group>";
+		};
+		81207B461CE37D1D00C47B58 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				81207B471CE3821900C47B58 /* SuccessChainableOperation.h */,
+				81207B481CE3821900C47B58 /* SuccessChainableOperation.m */,
+				81207B4A1CE3829300C47B58 /* SleepFailureChainableOperation.h */,
+				81207B4B1CE3829300C47B58 /* SleepFailureChainableOperation.m */,
+				81970DC61CEA08F700E25D51 /* FailureChainableOperation.h */,
+				81970DC71CEA08F700E25D51 /* FailureChainableOperation.m */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		81207B4D1CE4BBA900C47B58 /* Operations */ = {
+			isa = PBXGroup;
+			children = (
+				81207B4E1CE4BBFA00C47B58 /* VectorSpecificOperationTests.m */,
+			);
+			path = Operations;
+			sourceTree = "<group>";
+		};
+		8121FEB21CE1C4330023B632 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				8121FEB41CE1C5240023B632 /* NSOperationQueue+CustomQueueTests.m */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		8121FEB31CE1C46B0023B632 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				8121FEB61CE1CCF70023B632 /* Base */,
+				811D4BFF1CE31C1A009E0B43 /* Internal */,
+				81207B4D1CE4BBA900C47B58 /* Operations */,
+				8121FEB21CE1C4330023B632 /* Helpers */,
+				81207B461CE37D1D00C47B58 /* Mocks */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		8121FEB61CE1CCF70023B632 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				8121FEB71CE1CD210023B632 /* ChainableOperationBaseTests.m */,
+				81207B431CE352A800C47B58 /* CompoundOperationTests.m */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		81705BE11CC65D12005DAC85 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				8113FAA91CD255CB0078B60F /* Helpers */,
+				81705BF51CC65D12005DAC85 /* Protocols */,
+				81705BE21CC65D12005DAC85 /* Base */,
+				81705BEC1CC65D12005DAC85 /* Internal */,
+				8113FAA01CD232BC0078B60F /* Operations */,
+			);
+			name = Source;
+			path = ../../../Source;
+			sourceTree = "<group>";
+		};
+		81705BE21CC65D12005DAC85 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				81705BE31CC65D12005DAC85 /* AsyncOperation */,
+				81705BE61CC65D12005DAC85 /* ChainableOperationBase */,
+				81705BE91CC65D12005DAC85 /* CompoundOperation */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		81705BE31CC65D12005DAC85 /* AsyncOperation */ = {
+			isa = PBXGroup;
+			children = (
+				81705BE41CC65D12005DAC85 /* AsyncOperation.h */,
+				81705BE51CC65D12005DAC85 /* AsyncOperation.m */,
+			);
+			path = AsyncOperation;
+			sourceTree = "<group>";
+		};
+		81705BE61CC65D12005DAC85 /* ChainableOperationBase */ = {
+			isa = PBXGroup;
+			children = (
+				81705BE71CC65D12005DAC85 /* ChainableOperationBase.h */,
+				81705BE81CC65D12005DAC85 /* ChainableOperationBase.m */,
+				81705C041CC65D1C005DAC85 /* Application */,
+			);
+			path = ChainableOperationBase;
+			sourceTree = "<group>";
+		};
+		81705BE91CC65D12005DAC85 /* CompoundOperation */ = {
+			isa = PBXGroup;
+			children = (
+				811D4BF91CE2258F009E0B43 /* Configurator */,
+				81705BEA1CC65D12005DAC85 /* CompoundOperation.h */,
+				81705BEB1CC65D12005DAC85 /* CompoundOperation.m */,
+			);
+			path = CompoundOperation;
+			sourceTree = "<group>";
+		};
+		81705BEC1CC65D12005DAC85 /* Internal */ = {
+			isa = PBXGroup;
+			children = (
+				8184BA061CCA769F007A3ACF /* OperationChainer */,
+				81705BED1CC65D12005DAC85 /* OperationBuffer */,
+			);
+			path = Internal;
+			sourceTree = "<group>";
+		};
+		81705BED1CC65D12005DAC85 /* OperationBuffer */ = {
+			isa = PBXGroup;
+			children = (
+				81705BEE1CC65D12005DAC85 /* Factory */,
+				81705BF21CC65D12005DAC85 /* OperationBuffer.h */,
+				81705BF31CC65D12005DAC85 /* OperationBufferImplementation.h */,
+				81705BF41CC65D12005DAC85 /* OperationBufferImplementation.m */,
+			);
+			path = OperationBuffer;
+			sourceTree = "<group>";
+		};
+		81705BEE1CC65D12005DAC85 /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				81705BEF1CC65D12005DAC85 /* OperationBufferFactory.h */,
+				81705BF01CC65D12005DAC85 /* OperationBufferFactoryImplementation.h */,
+				81705BF11CC65D12005DAC85 /* OperationBufferFactoryImplementation.m */,
+			);
+			path = Factory;
+			sourceTree = "<group>";
+		};
+		81705BF51CC65D12005DAC85 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				81705BF61CC65D12005DAC85 /* ChainableOperation */,
+				81705BFB1CC65D12005DAC85 /* CompoundOperation */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		81705BF61CC65D12005DAC85 /* ChainableOperation */ = {
+			isa = PBXGroup;
+			children = (
+				81705BF71CC65D12005DAC85 /* ChainableOperation.h */,
+				81705BF81CC65D12005DAC85 /* ChainableOperationDelegate.h */,
+				81705BF91CC65D12005DAC85 /* ChainableOperationInput.h */,
+				81705BFA1CC65D12005DAC85 /* ChainableOperationOutput.h */,
+			);
+			path = ChainableOperation;
+			sourceTree = "<group>";
+		};
+		81705BFB1CC65D12005DAC85 /* CompoundOperation */ = {
+			isa = PBXGroup;
+			children = (
+				81705BFC1CC65D12005DAC85 /* CompoundOperationQueueInput.h */,
+				81705BFD1CC65D12005DAC85 /* CompoundOperationQueueOutput.h */,
+			);
+			path = CompoundOperation;
+			sourceTree = "<group>";
+		};
+		81705C031CC65D1C005DAC85 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				81705C071CC65D1C005DAC85 /* BusinessLogic */,
+				81705C081CC65D1C005DAC85 /* Core */,
+				81705C0E1CC65D1C005DAC85 /* Presentation */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		81705C041CC65D1C005DAC85 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				81705C051CC65D1C005DAC85 /* AppDelegate.h */,
+				81705C061CC65D1C005DAC85 /* AppDelegate.m */,
+			);
+			name = Application;
+			path = ../../../Develop/CompoundOperationsExampleDev/CompoundOperationsExampleDev/Classes/Application;
+			sourceTree = "<group>";
+		};
+		81705C071CC65D1C005DAC85 /* BusinessLogic */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = BusinessLogic;
+			sourceTree = "<group>";
+		};
+		81705C081CC65D1C005DAC85 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				81705C091CC65D1C005DAC85 /* Operations */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		81705C091CC65D1C005DAC85 /* Operations */ = {
+			isa = PBXGroup;
+			children = (
+				81705C0A1CC65D1C005DAC85 /* DecrementOperation.h */,
+				81705C0B1CC65D1C005DAC85 /* DecrementOperation.m */,
+				81705C0C1CC65D1C005DAC85 /* IncrementOperation.h */,
+				81705C0D1CC65D1C005DAC85 /* IncrementOperation.m */,
+				8113FA9A1CD0CC5B0078B60F /* DoublingOperation.h */,
+				8113FA9B1CD0CC5B0078B60F /* DoublingOperation.m */,
+				8113FA9D1CD10E300078B60F /* LogInputOperation.h */,
+				8113FA9E1CD10E300078B60F /* LogInputOperation.m */,
+				8113FAA61CD240BB0078B60F /* LogStringOperation.h */,
+				8113FAA71CD240BB0078B60F /* LogStringOperation.m */,
+			);
+			path = Operations;
+			sourceTree = "<group>";
+		};
+		81705C0E1CC65D1C005DAC85 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				81705C0F1CC65D1C005DAC85 /* FirstViewController.h */,
+				81705C101CC65D1C005DAC85 /* FirstViewController.m */,
+				81705C111CC65D1C005DAC85 /* SecondViewController.h */,
+				81705C121CC65D1C005DAC85 /* SecondViewController.m */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		81705C131CC65D1C005DAC85 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				81705C141CC65D1C005DAC85 /* Info.plist */,
+				81705C151CC65D1C005DAC85 /* main.m */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		8184BA061CCA769F007A3ACF /* OperationChainer */ = {
+			isa = PBXGroup;
+			children = (
+				8184BA101CCE42FB007A3ACF /* OperationChainer.h */,
+				8113FA921CD0BAF50078B60F /* ControlFlow */,
+				8113FA961CD0BB2E0078B60F /* DataFlow */,
+				8184BA111CCF5C09007A3ACF /* Factory */,
+			);
+			path = OperationChainer;
+			sourceTree = "<group>";
+		};
+		8184BA111CCF5C09007A3ACF /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				8184BA121CCF5C38007A3ACF /* OperationChainerFactory.h */,
+				8184BA131CCF5CFB007A3ACF /* OperationChainerFactoryImplementation.h */,
+				8184BA141CCF5CFB007A3ACF /* OperationChainerFactoryImplementation.m */,
+			);
+			path = Factory;
+			sourceTree = "<group>";
+		};
+		81E8097C1CBC0291002C9958 = {
+			isa = PBXGroup;
+			children = (
+				81E809871CBC0291002C9958 /* CompoundOperationsExampleDev */,
+				81E809A41CBC0292002C9958 /* CompoundOperationsExampleDevTests */,
+				81E809861CBC0291002C9958 /* Products */,
+				AA00E621DECE72CAC68FCD78 /* Pods */,
+				6E656DFE7A3EED23FAD40CA6 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		81E809861CBC0291002C9958 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				81E809851CBC0291002C9958 /* CompoundOperationsExampleDev.app */,
+				81E809A11CBC0292002C9958 /* CompoundOperationsExampleDevTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		81E809871CBC0291002C9958 /* CompoundOperationsExampleDev */ = {
+			isa = PBXGroup;
+			children = (
+				81705BE11CC65D12005DAC85 /* Source */,
+				81705C031CC65D1C005DAC85 /* Classes */,
+				81705C131CC65D1C005DAC85 /* SupportingFiles */,
+				81E809941CBC0291002C9958 /* Main.storyboard */,
+				81E809971CBC0291002C9958 /* Assets.xcassets */,
+				81E809991CBC0292002C9958 /* LaunchScreen.storyboard */,
+			);
+			path = CompoundOperationsExampleDev;
+			sourceTree = "<group>";
+		};
+		81E809A41CBC0292002C9958 /* CompoundOperationsExampleDevTests */ = {
+			isa = PBXGroup;
+			children = (
+				8121FEB31CE1C46B0023B632 /* Source */,
+				81E809A71CBC0292002C9958 /* Info.plist */,
+			);
+			path = CompoundOperationsExampleDevTests;
+			sourceTree = "<group>";
+		};
+		AA00E621DECE72CAC68FCD78 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				096870B99FE7CABEE65B5EAD /* Pods-CompoundOperationsExampleDevTests.debug.xcconfig */,
+				14AEF4DD23D1C29CF513F43B /* Pods-CompoundOperationsExampleDevTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		81E809841CBC0291002C9958 /* CompoundOperationsExampleDev */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 81E809AA1CBC0292002C9958 /* Build configuration list for PBXNativeTarget "CompoundOperationsExampleDev" */;
+			buildPhases = (
+				81E809811CBC0291002C9958 /* Sources */,
+				81E809821CBC0291002C9958 /* Frameworks */,
+				81E809831CBC0291002C9958 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CompoundOperationsExampleDev;
+			productName = CompoundOperationsExampleDev;
+			productReference = 81E809851CBC0291002C9958 /* CompoundOperationsExampleDev.app */;
+			productType = "com.apple.product-type.application";
+		};
+		81E809A01CBC0292002C9958 /* CompoundOperationsExampleDevTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 81E809AD1CBC0292002C9958 /* Build configuration list for PBXNativeTarget "CompoundOperationsExampleDevTests" */;
+			buildPhases = (
+				C7A89A2F273FB8F225D8693B /* Check Pods Manifest.lock */,
+				81E8099D1CBC0292002C9958 /* Sources */,
+				81E8099E1CBC0292002C9958 /* Frameworks */,
+				81E8099F1CBC0292002C9958 /* Resources */,
+				7E0CA9C4277A72A8AA98F2DD /* Embed Pods Frameworks */,
+				87D3A91FA4650FC686674CCE /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				81E809A31CBC0292002C9958 /* PBXTargetDependency */,
+			);
+			name = CompoundOperationsExampleDevTests;
+			productName = CompoundOperationsExampleDevTests;
+			productReference = 81E809A11CBC0292002C9958 /* CompoundOperationsExampleDevTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		81E8097D1CBC0291002C9958 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Novik Gleb";
+				TargetAttributes = {
+					81E809841CBC0291002C9958 = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					81E809A01CBC0292002C9958 = {
+						CreatedOnToolsVersion = 7.3;
+					};
+				};
+			};
+			buildConfigurationList = 81E809801CBC0291002C9958 /* Build configuration list for PBXProject "CompoundOperationsExampleDev" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 81E8097C1CBC0291002C9958;
+			productRefGroup = 81E809861CBC0291002C9958 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				81E809841CBC0291002C9958 /* CompoundOperationsExampleDev */,
+				81E809A01CBC0292002C9958 /* CompoundOperationsExampleDevTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		81E809831CBC0291002C9958 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				81705C1B1CC65D1C005DAC85 /* Info.plist in Resources */,
+				81E8099B1CBC0292002C9958 /* LaunchScreen.storyboard in Resources */,
+				81E809981CBC0291002C9958 /* Assets.xcassets in Resources */,
+				81E809961CBC0291002C9958 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		81E8099F1CBC0292002C9958 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7E0CA9C4277A72A8AA98F2DD /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CompoundOperationsExampleDevTests/Pods-CompoundOperationsExampleDevTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		87D3A91FA4650FC686674CCE /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CompoundOperationsExampleDevTests/Pods-CompoundOperationsExampleDevTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C7A89A2F273FB8F225D8693B /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		81E809811CBC0291002C9958 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				81705C1A1CC65D1C005DAC85 /* SecondViewController.m in Sources */,
+				8113FA9F1CD10E300078B60F /* LogInputOperation.m in Sources */,
+				8113FA991CD0BB7C0078B60F /* DataFlowOperationChainer.m in Sources */,
+				81705C171CC65D1C005DAC85 /* DecrementOperation.m in Sources */,
+				81705C191CC65D1C005DAC85 /* FirstViewController.m in Sources */,
+				8113FAB11CD2569D0078B60F /* NSOperationQueue+CustomQueue.m in Sources */,
+				81705BFF1CC65D12005DAC85 /* ChainableOperationBase.m in Sources */,
+				81705BFE1CC65D12005DAC85 /* AsyncOperation.m in Sources */,
+				8184BA151CCF5CFB007A3ACF /* OperationChainerFactoryImplementation.m in Sources */,
+				81705C161CC65D1C005DAC85 /* AppDelegate.m in Sources */,
+				81705C011CC65D12005DAC85 /* OperationBufferFactoryImplementation.m in Sources */,
+				81705C021CC65D12005DAC85 /* OperationBufferImplementation.m in Sources */,
+				81705C181CC65D1C005DAC85 /* IncrementOperation.m in Sources */,
+				81705C1C1CC65D1C005DAC85 /* main.m in Sources */,
+				8113FAA51CD233AA0078B60F /* VectorSpecificOperation.m in Sources */,
+				81705C001CC65D12005DAC85 /* CompoundOperation.m in Sources */,
+				8113FAA81CD240BB0078B60F /* LogStringOperation.m in Sources */,
+				8113FA9C1CD0CC5B0078B60F /* DoublingOperation.m in Sources */,
+				811D4BFD1CE22E7A009E0B43 /* OperationChainConfiguratorImplementation.m in Sources */,
+				8113FA951CD0BB220078B60F /* ControlFlowOperationChainer.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		81E8099D1CBC0292002C9958 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8121FEBB1CE1DDD80023B632 /* NSOperationQueue+CustomQueue.m in Sources */,
+				81207B401CE3281900C47B58 /* OperationBufferImplementationTests.m in Sources */,
+				811D4C051CE31E71009E0B43 /* DataFlowOperationChainer.m in Sources */,
+				811D4C041CE31E60009E0B43 /* OperationChainerFactoryImplementation.m in Sources */,
+				811D4C011CE31C6C009E0B43 /* ControlFlowOperationChainerTests.m in Sources */,
+				8121FEB91CE1DDA60023B632 /* AsyncOperation.m in Sources */,
+				81970DC81CEA08F700E25D51 /* FailureChainableOperation.m in Sources */,
+				8121FEB81CE1CD210023B632 /* ChainableOperationBaseTests.m in Sources */,
+				811D4C081CE31EF4009E0B43 /* DataFlowOperationChainerTests.m in Sources */,
+				811D4C021CE31E4C009E0B43 /* ControlFlowOperationChainer.m in Sources */,
+				8121FEBA1CE1DDAF0023B632 /* ChainableOperationBase.m in Sources */,
+				811D4BFE1CE22E7A009E0B43 /* OperationChainConfiguratorImplementation.m in Sources */,
+				81207B451CE3588200C47B58 /* CompoundOperation.m in Sources */,
+				8121FEB51CE1C5240023B632 /* NSOperationQueue+CustomQueueTests.m in Sources */,
+				81207B441CE352A800C47B58 /* CompoundOperationTests.m in Sources */,
+				81D3C8871CE9E2870090178B /* OperationBufferFactoryImplementationTests.m in Sources */,
+				81207B421CE32DBF00C47B58 /* OperationChainConfiguratorImplementationTests.m in Sources */,
+				81207B491CE3821900C47B58 /* SuccessChainableOperation.m in Sources */,
+				81207B501CE4C66900C47B58 /* VectorSpecificOperation.m in Sources */,
+				811D4C031CE31E55009E0B43 /* OperationBufferFactoryImplementation.m in Sources */,
+				81207B4C1CE3829300C47B58 /* SleepFailureChainableOperation.m in Sources */,
+				81207B4F1CE4BBFA00C47B58 /* VectorSpecificOperationTests.m in Sources */,
+				811D4C061CE31E78009E0B43 /* OperationBufferImplementation.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		81E809A31CBC0292002C9958 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 81E809841CBC0291002C9958 /* CompoundOperationsExampleDev */;
+			targetProxy = 81E809A21CBC0292002C9958 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		81E809941CBC0291002C9958 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				81E809951CBC0291002C9958 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		81E809991CBC0292002C9958 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				81E8099A1CBC0292002C9958 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		81E809A81CBC0292002C9958 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		81E809A91CBC0292002C9958 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		81E809AB1CBC0292002C9958 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "$(SRCROOT)/CompoundOperationsExampleDev/SupportingFiles/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ru.rambler.CompoundOperationsExampleDev;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		81E809AC1CBC0292002C9958 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "$(SRCROOT)/CompoundOperationsExampleDev/SupportingFiles/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ru.rambler.CompoundOperationsExampleDev;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		81E809AE1CBC0292002C9958 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 096870B99FE7CABEE65B5EAD /* Pods-CompoundOperationsExampleDevTests.debug.xcconfig */;
+			buildSettings = {
+				INFOPLIST_FILE = CompoundOperationsExampleDevTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"XCTest\"",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ru.rambler.CompoundOperationsExampleDevTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		81E809AF1CBC0292002C9958 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 14AEF4DD23D1C29CF513F43B /* Pods-CompoundOperationsExampleDevTests.release.xcconfig */;
+			buildSettings = {
+				INFOPLIST_FILE = CompoundOperationsExampleDevTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"XCTest\"",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ru.rambler.CompoundOperationsExampleDevTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		81E809801CBC0291002C9958 /* Build configuration list for PBXProject "CompoundOperationsExampleDev" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				81E809A81CBC0292002C9958 /* Debug */,
+				81E809A91CBC0292002C9958 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		81E809AA1CBC0292002C9958 /* Build configuration list for PBXNativeTarget "CompoundOperationsExampleDev" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				81E809AB1CBC0292002C9958 /* Debug */,
+				81E809AC1CBC0292002C9958 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		81E809AD1CBC0292002C9958 /* Build configuration list for PBXNativeTarget "CompoundOperationsExampleDevTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				81E809AE1CBC0292002C9958 /* Debug */,
+				81E809AF1CBC0292002C9958 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 81E8097D1CBC0291002C9958 /* Project object */;
+}
