@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://habrastorage.org/files/dc8/755/24f/dc875524fbfe46c3964d1d3eed118303.png"/>
+  <img src="https://habrastorage.org/files/3c5/4cd/4e1/3c54cd4e189e4c76b4cb2b39e7c126ec.gif"/>
 </p>
 
 <p align="center">
@@ -108,3 +108,7 @@ class NetworkRequestChainableOperation: ChainableOperationBase {
 ### License
 
 MIT
+
+### Thanks
+
+[Sergey Simanov](https://dribbble.com/SlmacH) - impressive logo design.
