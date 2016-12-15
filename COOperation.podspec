@@ -10,6 +10,7 @@ Pod::Spec.new do |s|
   s.homepage      = "https://github.com/rambler-digital-solutions/COOperation"
   s.source        = { :git => "https://github.com/rambler-digital-solutions/COOperation.git", :tag => s.version.to_s }
   s.source_files  = 'Source/**/*.{h,m}'
-  s.platform      = :ios, "7.0"
+  s.ios.deployment_target = "7.0"
+  s.osx.deployment_target = "10.9"
   s.requires_arc  = true
 end
