@@ -6,7 +6,7 @@
   <b>Your service implementation is a cooperation of your core components</b>
 </p>
 
-![Version](https://img.shields.io/badge/version-0.0.1-brightgreen.svg)
+![Version](https://img.shields.io/badge/version-0.0.2-brightgreen.svg)
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 ![Test Coverage](https://img.shields.io/badge/Test%20Coverage-55%25-orange.svg)
 ![Status](https://img.shields.io/badge/status-alpha-orange.svg)
