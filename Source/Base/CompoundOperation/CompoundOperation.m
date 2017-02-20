@@ -197,6 +197,7 @@
 - (void)finishCompoundOperationExecution {
     [self.queue setSuspended:YES];
     [self.queue cancelAllOperations];
+    [self.queue setSuspended:NO];
     
     [self complete];
 }
