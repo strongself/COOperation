@@ -115,6 +115,7 @@
     // then
     OCMVerify([self.mockOperationQueue setSuspended:YES]);
     OCMVerify([self.mockOperationQueue cancelAllOperations]);
+    OCMVerify([self.mockOperationQueue setSuspended:NO]);
 }
 
 
