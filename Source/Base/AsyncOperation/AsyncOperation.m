@@ -20,19 +20,24 @@
 
 #import "AsyncOperation.h"
 
-static NSString *const kExecutingFlagSelector = @"isExecuting";
-static NSString *const kFinishedFlagSelector = @"isFinished";
+@interface AsyncOperation ()
+
+@property (strong, nonatomic) NSRecursiveLock *recursiveLock;
+
+@end
 
 @implementation AsyncOperation {
     BOOL        executing;
     BOOL        finished;
-};
+}
 
 - (instancetype)init {
     self = [super init];
     if (self) {
         executing = NO;
         finished = NO;
+        _recursiveLock = [[NSRecursiveLock alloc] init];
+        _recursiveLock.name = [NSString stringWithFormat:@"com.strongself.%@-lock", [self class]];
     }
     return self;
 }
@@ -44,14 +49,22 @@ static NSString *const kFinishedFlagSelector = @"isFinished";
 }
 
 - (BOOL)isExecuting {
-    return executing;
+    [self.recursiveLock lock];
+    BOOL result = executing;
+    [self.recursiveLock unlock];
+    
+    return result;
 }
 
 - (BOOL)isFinished {
-    return finished;
+    [self.recursiveLock lock];
+    BOOL result = finished;
+    [self.recursiveLock unlock];
+    
+    return result;
 }
 
-#pragma mark - Private methods
+#pragma mark - NSOperation overrides
 
 - (void)start {
     /**
@@ -73,11 +86,8 @@ static NSString *const kFinishedFlagSelector = @"isFinished";
          
          If it wasn't cancelled and wasn't started manually, we're beginning the task
          */
-        [self willChangeValueForKey:kExecutingFlagSelector];
-        
+        [self lockedMarkStarted];
         [NSThread detachNewThreadSelector:@selector(main) toTarget:self withObject:nil];
-        executing = YES;
-        [self didChangeValueForKey:kExecutingFlagSelector];
     }
 }
 
@@ -86,20 +96,56 @@ static NSString *const kFinishedFlagSelector = @"isFinished";
                 format:@"You should override the method %@ in a subclass", NSStringFromSelector(_cmd)];
 }
 
+#pragma mark - Utils
+
+- (void)changeValueForKey:(NSString *)key inBlock:(void(^)())block {
+    [self willChangeValueForKey:key];
+    block();
+    [self didChangeValueForKey:key];
+}
+
+- (void)lock:(void(^)())block {
+    [self.recursiveLock lock];
+    block();
+    [self.recursiveLock unlock];
+}
+
+#pragma mark - State management
+
+- (void)markFinished {
+    [self changeValueForKey:NSStringFromSelector(@selector(isFinished)) inBlock:^{
+        finished = YES;
+    }];
+}
+
+- (void)markStarted {
+    [self changeValueForKey:NSStringFromSelector(@selector(isExecuting)) inBlock:^{
+        executing = YES;
+    }];
+}
+
+- (void)lockedMarkStarted {
+    [self lock:^{
+        [self markStarted];
+    }];
+}
+
+- (void)markComplete {
+    [self changeValueForKey:NSStringFromSelector(@selector(isExecuting)) inBlock:^{
+        executing = NO;
+    }];
+}
+
 - (void)complete {
     /**
      @author Egor Tolstoy
      
      We should always manually setup finished and executing flags after the operation is complete or cancelled
      */
-    [self willChangeValueForKey:kFinishedFlagSelector];
-    [self willChangeValueForKey:kExecutingFlagSelector];
-    
-    executing = NO;
-    finished = YES;
-    
-    [self didChangeValueForKey:kExecutingFlagSelector];
-    [self didChangeValueForKey:kFinishedFlagSelector];
+    [self lock:^{
+        [self markComplete];
+        [self markFinished];
+    }];
 }
 
 @end
