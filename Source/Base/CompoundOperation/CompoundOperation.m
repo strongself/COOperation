@@ -156,14 +156,10 @@
 - (void)cancel {
     // We should cancel the operation only if it's executing
     if (![self isFinished] && ![self isCancelled]) {
-        [super cancel];
-        
-        if ([self isExecuting]) {
-            [self finishCompoundOperationExecution];
-        }
+        [super cancel];        
+        [self finishCompoundOperationExecution];
     }
 }
-
 
 #pragma mark - <ChainableOperationDelegate>
 

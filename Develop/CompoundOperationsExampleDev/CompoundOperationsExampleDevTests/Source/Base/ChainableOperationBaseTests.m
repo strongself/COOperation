@@ -119,7 +119,7 @@ static CGFloat const COODefaultTestTimeout = 0.1f;
     }];
     
     // when
-    [self.chainableOperationBaseMock start];
+    [(ChainableOperationBase *)self.chainableOperationBaseMock start];
     
     // then
     [self waitForExpectationsWithTimeout:COODefaultTestTimeout handler:^(NSError * _Nullable error) {
@@ -135,7 +135,7 @@ static CGFloat const COODefaultTestTimeout = 0.1f;
     }];
     
     // when
-    [self.chainableOperationBaseMock start];
+    [(ChainableOperationBase *)self.chainableOperationBaseMock start];
     
     // then
     [self waitForExpectationsWithTimeout:COODefaultTestTimeout handler:^(NSError * _Nullable error) {
@@ -152,7 +152,7 @@ static CGFloat const COODefaultTestTimeout = 0.1f;
     }];
     
     // when
-    [self.chainableOperationBaseMock start];
+    [(ChainableOperationBase *)self.chainableOperationBaseMock start];
     
     // then
     __weak __typeof__(self) weakSelf = self;
@@ -172,7 +172,7 @@ static CGFloat const COODefaultTestTimeout = 0.1f;
     }];
     
     // when
-    [self.chainableOperationBaseMock start];
+    [(ChainableOperationBase *)self.chainableOperationBaseMock start];
     
     // then
     __weak __typeof__(self) weakSelf = self;
