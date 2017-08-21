@@ -13,12 +13,12 @@
 
 **COOperation** is a component for organizing and structuring the code of your service layer with the help of *NSOperation*.
 
-         | Key Features
----------|---------------
-&#127984; | Design beautiful and reusable business logic
-&#128591; | Follow the SOLID principles out of the box
-&#127823; | Use the *Compound Operations* concept introduced by Apple at WWDC 2015 ([Advanced NSOperations](https://developer.apple.com/videos/play/wwdc2015/226/))
-&#9745;   | Write unit and integration tests easily
+|         | Key Features|
+|---------|---------------|
+|&#127984; | Design beautiful and reusable business logic|
+|&#128591; | Follow the SOLID principles out of the box|
+|&#127823; | Use the *Compound Operations* concept introduced by Apple at WWDC 2015 ([Advanced NSOperations](https://developer.apple.com/videos/play/wwdc2015/226/))
+|&#9745;   | Write unit and integration tests easily|
 
 **COOperation** is written in Objective-C with full Swift interop support. By the way, we are working on a Swift version!
 
